@@ -1,0 +1,1527 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d3b31ec23894273bb269c8d732151d, type: 3}
+  m_Name: LocalizationSetting
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dataPackage
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.Dictionary`2[[System.String,
+        mscorlib],[JKFramework.LocalizationModel, Assembly-CSharp]], mscorlib]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: UIMainWindow
+    - Name: $v
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: titleText
+    - Name: $v
+      Entry: 7
+      Data: 3|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 4|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 5|System.Collections.Generic.EnumEqualityComparer`1[[JKFramework.LanguageType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 6|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u4E50 \u56ED \u5C04 \u51FB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 7|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Park Shoot
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: newGameText
+    - Name: $v
+      Entry: 7
+      Data: 8|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 9|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 10|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u65B0\u6E38\u620F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 11|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: New game
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: continueText
+    - Name: $v
+      Entry: 7
+      Data: 12|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 13|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 14|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u7EE7\u7EED\u6E38\u620F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 15|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Continue
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: rankText
+    - Name: $v
+      Entry: 7
+      Data: 16|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 17|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 18|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u6392\u884C\u699C"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 19|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Rank
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: quitText
+    - Name: $v
+      Entry: 7
+      Data: 20|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 21|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 22|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u9000\u51FA\u6E38\u620F"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 23|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Quit
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: settingText
+    - Name: $v
+      Entry: 7
+      Data: 24|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 25|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 26|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8BBE\u7F6E"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 27|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Setting
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: UINewGameWindow
+    - Name: $v
+      Entry: 7
+      Data: 28|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 29|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: userNameText
+    - Name: $v
+      Entry: 7
+      Data: 30|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 31|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 32|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u6635\u79F0"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 33|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: User name
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: placeholderText
+    - Name: $v
+      Entry: 7
+      Data: 34|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 35|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 36|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8F93\u5165\u6635\u79F0"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 37|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Enter your name
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playText
+    - Name: $v
+      Entry: 7
+      Data: 38|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 39|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 40|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u5F00\u59CB"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 41|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Play
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: backText
+    - Name: $v
+      Entry: 7
+      Data: 42|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 43|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 44|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8FD4\u56DE"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 45|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Back
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Tip
+    - Name: $v
+      Entry: 7
+      Data: 46|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 47|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: checkName
+    - Name: $v
+      Entry: 7
+      Data: 48|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 49|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 50|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8BF7\u8F93\u5165\u6635\u79F0"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 51|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Please enter your name
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: UISaveWindow
+    - Name: $v
+      Entry: 7
+      Data: 52|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 53|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: delete
+    - Name: $v
+      Entry: 7
+      Data: 54|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 55|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 56|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u5220\u9664"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 57|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Delete
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: UISettingWindow
+    - Name: $v
+      Entry: 7
+      Data: 58|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 59|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: globalVolumeText
+    - Name: $v
+      Entry: 7
+      Data: 60|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 61|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 62|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u5168\u5C40\u97F3\u91CF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 63|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Global volume
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: bgVolumeText
+    - Name: $v
+      Entry: 7
+      Data: 64|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 65|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 66|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u80CC\u666F\u97F3\u91CF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 67|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Background volume
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: effectVolumeText
+    - Name: $v
+      Entry: 7
+      Data: 68|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 69|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 70|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u7279\u6548\u97F3\u91CF"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 71|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Effect volume
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: languageTypeText
+    - Name: $v
+      Entry: 7
+      Data: 72|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 73|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 74|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8BED\u8A00"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 75|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Language
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: UIResultWindow
+    - Name: $v
+      Entry: 7
+      Data: 76|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[JKFramework.LocalizationModel,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 77|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: score
+    - Name: $v
+      Entry: 7
+      Data: 78|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 79|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 80|System.Collections.Generic.EnumEqualityComparer`1[[JKFramework.LanguageType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 81|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u5206\u6570\uFF1A"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 82|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: 'Score:'
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playAgain
+    - Name: $v
+      Entry: 7
+      Data: 83|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 84|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 85|System.Collections.Generic.EnumEqualityComparer`1[[JKFramework.LanguageType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 86|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u518D\u6765\u4E00\u5C40"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 87|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Play again
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: back
+    - Name: $v
+      Entry: 7
+      Data: 88|JKFramework.LocalizationModel, Assembly-CSharp
+    - Name: contentDic
+      Entry: 7
+      Data: 89|System.Collections.Generic.Dictionary`2[[JKFramework.LanguageType,
+        Assembly-CSharp],[JKFramework.ILanguageContent, Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 90|System.Collections.Generic.EnumEqualityComparer`1[[JKFramework.LanguageType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 91|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: "\u8FD4\u56DE\u83DC\u5355"
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 92|JKFramework.L_Text, Assembly-CSharp
+    - Name: content
+      Entry: 1
+      Data: Back
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

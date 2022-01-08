@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7c19682d9c54701a72f0e2fad2ee0f, type: 3}
+  m_Name: LeveConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  createMonsterInterval: 2
+  maxMonsterCountInScene: 3
+  createMonsterConfigs:
+  - monsterConfig: {fileID: 11400000, guid: 252e61c3d3e144fd9ae21e9103e80281, type: 2}
+    probability: 30
+  - monsterConfig: {fileID: 11400000, guid: 2c97462c3aa714dcda7ecba629e9e13e, type: 2}
+    probability: 100
