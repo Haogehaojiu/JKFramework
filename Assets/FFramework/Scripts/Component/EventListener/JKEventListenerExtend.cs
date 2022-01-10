@@ -80,7 +80,5 @@ namespace JKFramework
         public static void RemoveTriggerStay2D(this Component component, Action<Collider2D, object[]> action, bool checkArgs = false, params object[] args) { RemoveEventListener(component, FEventType.OnTriggerStay2D, action, checkArgs, args); }
         public static void RemoveTriggerExit2D(this Component component, Action<Collider2D, object[]> action, bool checkArgs = false, params object[] args) { RemoveEventListener(component, FEventType.OnTriggerExit2D, action, checkArgs, args); }
         #endregion
-
-
     }
 }

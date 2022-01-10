@@ -123,11 +123,6 @@ namespace JKFramework
                 if (saveIdComparison != 0) return saveIdComparison;
                 return x.lastSaveTime.CompareTo(y.lastSaveTime);
             }
-            // public int Compare(SaveItem x, SaveItem y)
-            // {
-            //     if (x.lastSaveTime > y.lastSaveTime) return -1;
-            //     return 1;
-            // }
         }
         /// <summary>
         /// 获取所有存档（万能解决方案）
@@ -138,13 +133,8 @@ namespace JKFramework
         /// <returns></returns>
         public static List<SaveItem> GetAllSaveItem<T>(Func<SaveItem, T> orderFunc, bool isDescending = false)
         {
-            if (isDescending)
-            {
-                return saveManagerData.saveItemList.OrderByDescending(orderFunc).ToList();
-            } else
-            {
-                return saveManagerData.saveItemList.OrderBy(orderFunc).ToList();
-            }
+            if (isDescending) return saveManagerData.saveItemList.OrderByDescending(orderFunc).ToList();
+            return saveManagerData.saveItemList.OrderBy(orderFunc).ToList();
         }
         #endregion
         #region 关于存档
@@ -242,7 +232,7 @@ namespace JKFramework
         /// 移除缓存
         /// </summary>
         /// <param name="saveId"></param>
-        private static void RemoveCache(int saveId) { cacheDic.Remove(saveId); }
+        private static void RemoveCache(int saveId) => cacheDic.Remove(saveId);
         #endregion
         #region 关于对象
         /// <summary>
@@ -292,13 +282,13 @@ namespace JKFramework
         /// </summary>
         /// <param name="saveObject">要保存的对象</param>
         /// <param name="saveId">存档的编号</param>
-        public static void SaveObject(object saveObject, int saveId = 0) { SaveObject(saveObject, saveObject.GetType().Name, saveId); }
+        public static void SaveObject(object saveObject, int saveId = 0) => SaveObject(saveObject, saveObject.GetType().Name, saveId);
         /// <summary>
         /// 保存对象到某个存档中
         /// </summary>
         /// <param name="saveObject">要保存的对象</param>
         /// <param name="saveItem">存档信息</param>
-        public static void SaveObject(object saveObject, SaveItem saveItem) { SaveObject(saveObject, saveObject.GetType().Name, saveItem); }
+        public static void SaveObject(object saveObject, SaveItem saveItem) => SaveObject(saveObject, saveObject.GetType().Name, saveItem);
         /// <summary>
         /// 从某个具体的存档中加载某个对象
         /// </summary>
@@ -326,38 +316,39 @@ namespace JKFramework
         /// <param name="saveFileName">文件名称</param>
         /// <param name="saveItem">存档信息</param>
         /// <typeparam name="T">要返回的具体类型</typeparam>
-        public static T LoadObject<T>(string saveFileName, SaveItem saveItem) where T : class { return LoadObject<T>(saveFileName, saveItem.saveId); }
+        public static T LoadObject<T>(string saveFileName, SaveItem saveItem) where T : class => LoadObject<T>(saveFileName, saveItem.saveId);
         /// <summary>
         /// 从某个具体的存档中加载某个对象
         /// </summary>
         /// <param name="saveId">存档编号</param>
         /// <typeparam name="T">要返回的具体类型</typeparam>
-        public static T LoadObject<T>(int saveId = 0) where T : class { return LoadObject<T>(typeof(T).Name, saveId); }
+        public static T LoadObject<T>(int saveId = 0) where T : class => LoadObject<T>(typeof(T).Name, saveId);
         /// <summary>
         /// 从某个具体的存档中加载某个对象
         /// </summary>
         /// <param name="saveItem">存档信息</param>
         /// <typeparam name="T">要返回的具体类型</typeparam>
         /// <returns></returns>
-        public static T LoadObject<T>(SaveItem saveItem) where T : class { return LoadObject<T>(typeof(T).Name, saveItem.saveId); }
+        public static T LoadObject<T>(SaveItem saveItem) where T : class => LoadObject<T>(typeof(T).Name, saveItem.saveId);
         #endregion
+
         #region 全局数据
         /// <summary>
         /// 加载设置,全局生效，不关乎任何一个存档
         /// </summary>
-        public static T LoadSetting<T>(string fileName) where T : class { return LoadFile<T>($"{settingDirPath}/{fileName}"); }
+        public static T LoadSetting<T>(string fileName) where T : class => LoadFile<T>($"{settingDirPath}/{fileName}");
         /// <summary>
         /// 加载设置,全局生效，不关乎任何一个存档
         /// </summary>
-        public static T LoadSetting<T>() where T : class { return LoadSetting<T>(typeof(T).Name); }
+        public static T LoadSetting<T>() where T : class => LoadSetting<T>(typeof(T).Name);
         /// <summary>
         /// 保存设置，全局生效，不关乎任何一个存档
         /// </summary>
-        public static void SaveSetting(object saveObject, string fileName) { SaveFile(saveObject, $"{settingDirPath}/{fileName}"); }
+        public static void SaveSetting(object saveObject, string fileName) => SaveFile(saveObject, $"{settingDirPath}/{fileName}");
         /// <summary>
         /// 保存设置，全局生效，不关乎任何一个存档
         /// </summary>
-        public static void SaveSetting(object saveObject) { SaveSetting(saveObject, saveObject.GetType().Name); }
+        public static void SaveSetting(object saveObject) => SaveSetting(saveObject, saveObject.GetType().Name);
         #endregion
         #region 工具函数
         private static BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -390,11 +381,10 @@ namespace JKFramework
             try
             {
                 // FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate);
-                FileStream fileStream = null;
+                FileStream fileStream;
                 fileStream = File.Open(path, FileMode.Create);
                 //二进制的方式把对象写进文件
                 binaryFormatter.Serialize(fileStream, saveObj);
-                // fileStream.Dispose();
                 fileStream.Close();
             } catch(Exception e)
             {
@@ -410,14 +400,13 @@ namespace JKFramework
         private static T LoadFile<T>(string path) where T : class
         {
             if (!File.Exists(path)) return null;
-            FileStream fileStream = null;
-            T obj = null;
+            FileStream fileStream;
+            T obj;
             binaryFormatter = new BinaryFormatter();
             // FileStream fileStream = new FileStream(path, FileMode.Open);
             fileStream = File.Open(path, FileMode.Open);
             //将内容解码成对象
             obj = (T)binaryFormatter.Deserialize(fileStream);
-            // fileStream.Dispose();
             fileStream.Close();
             return obj;
         }

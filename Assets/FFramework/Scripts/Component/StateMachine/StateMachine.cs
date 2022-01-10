@@ -24,7 +24,7 @@ namespace JKFramework
         /// 初始化
         /// </summary>
         /// <param name="owner">宿主</param>
-        public void Init(IStateMachineOwner owner) { this.owner = owner; }
+        public void Init(IStateMachineOwner owner) => this.owner = owner;
         /// <summary>
         /// 切换状态
         /// </summary>

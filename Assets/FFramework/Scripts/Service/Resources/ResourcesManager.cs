@@ -10,8 +10,8 @@ namespace JKFramework
     /// </summary>
     public static class ResourcesManager
     {
-        // public static ResourcesManager Instance { get; } = new ResourcesManager();
-        //需要缓存的类型（bool值没有实际意义，只是字典需要键和值，而bool数据比较小）
+        //需要缓存的类型
+        //bool值没有实际意义，只是字典需要键和值，而bool数据比较小
         private static Dictionary<Type, bool> wantCacheDic;
         static ResourcesManager() => wantCacheDic = GameRoot.Instance.GameSetting.CacheDictionary;
         /// <summary>
@@ -67,7 +67,7 @@ namespace JKFramework
         /// <summary>
         /// 异步加载Unity资源，例如AudioClip、Sprite、GameObject（预制体）等
         /// </summary>
-        public static void LoadAssetAsync<T>(string path, Action<T> callback) where T : UnityEngine.Object { MonoManager.Instance.StartCoroutine(DoLoadAssetAsync(path, callback)); }
+        public static void LoadAssetAsync<T>(string path, Action<T> callback) where T : UnityEngine.Object => MonoManager.Instance.StartCoroutine(DoLoadAssetAsync(path, callback));
         static IEnumerator DoLoadAssetAsync<T>(string path, Action<T> callback) where T : UnityEngine.Object
         {
             ResourceRequest request = Resources.LoadAsync<T>(path);
@@ -86,7 +86,7 @@ namespace JKFramework
         /// <summary>
         /// 基于预制体实例化
         /// </summary>
-        public static GameObject InstantiatePrefab(string path, Transform parent = null) { return InstantiatePrefab(GetPrefab(path), parent); }
+        public static GameObject InstantiatePrefab(string path, Transform parent = null) => InstantiatePrefab(GetPrefab(path), parent);
         /// <summary>
         /// 基于预制体实例化
         /// </summary>
@@ -96,6 +96,5 @@ namespace JKFramework
             go.name = prefab.name;
             return go;
         }
-
     }
 }

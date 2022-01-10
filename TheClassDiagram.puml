@@ -1,0 +1,710 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class MonoBehaviour
+
+abstract class Singleton<Singleton<T>, new()>
+{
+    public static T Instance{}
+}
+
+MonoBehaviour <|-- SingletonMonoBehaviour
+abstract class SingletonMonoBehaviour<SingletonMonoBehaviour<T>>
+{
+    public static T Instance
+    protected virtual void Awake()
+}
+
+MonoBehaviour <|-- ManagerBaseBase
+abstract class ManagerBaseBase
+{
+    public virtual void Init()
+}
+
+ManagerBaseBase <|-- ManagerBase
+abstract class ManagerBase<ManagerBase<T>>
+{
+    public static T Instance
+    public overrider void Init()
+}
+
+SingletonMonoBehaviour <|-- LogicManagerBase
+abstract class LogicManagerBase<LogicManagerBase<T>>
+{
+    protected abstract void RegisterEventListener()
+    protected abstract void CancelEventListener()
+    protected void OnEnable()
+    protected virtual void OnDisable()
+}
+
+UIManager <.. GameRoot
+MonoBehaviour <.. GameRoot
+PoolManager <.. GameRoot
+ConfigManager <.. GameRoot
+SingletonMonoBehaviour <|.. GameRoot
+AudioManager <.. GameRoot
+LocalizationManager <.. GameRoot 
+class GameRoot
+{
+    private GameSetting gameSetting
+    public GameSetting GameSetting
+    protected override void Awake()
+    private void InitManagers()
+}
+
+GameObjectPoolData *-- PoolManager
+ObjectPoolData *-- PoolManager
+ManagerBase <|.. PoolManager
+class PoolManager
+{
+    private GameObject poolRootObj
+    public Dictionary<string, GameObjectPoolData> gameObjectPoolDictionary
+    public Dictionary<string, ObjectPoolData> objectPoolDic
+    public T GetGameObject<T>(GameObject prefab, Transform parent = null)
+    public GameObject GetGameObjet(GameObject prefab, Transform parent = null)
+    public void PushGameObject(GameObject go)
+    private bool CheckGameObjectPoolCache(GameObject prefab)
+    public GameObject CheckCacheAndLoadGameObject(string path, Transform parent = null)
+    
+    public T GetObject<T>()
+    public void PushObject(object obj)
+    private bool CheckObjectPoolCache<T>()
+    
+    public void Clear(bool clearGameObject = true, bool clearCSharpObject = true)
+    public void ClearAllGameObject()
+    public void ClearGameObject(string prefabName)
+    public void ClearGameObject(GameObject prefab)
+    public void ClearAllObject()
+    public void ClearObject<T>()
+    public void ClearObject(Type type)
+}
+
+abstract class Attribute
+
+Attribute <|.. PoolAttribute
+class PoolAttribute
+
+PoolAttribute o-- GameObjectPoolData
+class GameObjectPoolData
+{
+    private GameObject parentGameObject
+    public Queue<GameObject> PoolQueue
+    public GameObjectPoolData(GameObject go, GameObject poolRootObj)
+    public void PushGameObject(GameObject go)
+    public GameObject GetGameObject(Transform parent = null)
+}
+
+PoolAttribute o-- ObjectPoolData
+class ObjectPoolData
+{
+    public readonly Queue<object> PoolQueue
+    public ObjectPoolData(object obj)
+    public void PushObj(object obj)
+    public object GetObj()
+}
+
+abstract class SerializedScriptableObject
+SerializedScriptableObject <|.. ConfigBase
+class ConfigBase
+
+ConfigSetting *-- ConfigManager
+GameSetting *-- ConfigManager
+ManagerBase <|.. ConfigManager
+class ConfigManager
+{
+    private ConfigSetting configSetting
+    public T GetConfig<T>(string configTypeName, int id = 0) where T : ConfigBase
+}
+
+ConfigBase <|-- ConfigSetting
+class ConfigSetting
+{
+    public Dictionary<string, Dictionary<int, ConfigBase>> ConfigDictionary;
+    public T GetConfig<T>(string configTypeName, int id) where T : ConfigBase
+}
+
+ConfigBase <|-- GameSetting
+class GameSetting
+{
+    public Dictionary<Type, bool> CacheDictionary
+    public Dictionary<Type, UIElement> uiElementsDic
+}
+
+MonoManager <-- ResourcesManager
+PoolManager <-- ResourcesManager
+GameSetting *-- ResourcesManager
+class ResourcesManager
+{
+    private static Dictionary<Type, bool> wantCacheDic
+    static ResourcesManager()
+    private static bool CheckCacheDic(Type type)
+    public static T LoadAsset<T>(string path) where T : UnityEngine.Object
+    public static T Load<T>() where T : class, new()
+    public static T Load<T>(string path, Transform parent = null) where T : Component
+    public static void LoadGameObjectAsync<T>(string path, Action<T> callback = null, Transform parent = null) where T : UnityEngine.Object
+    static IEnumerator DoLoadGameObjectAsync<T>(string path, Action<T> callback = null, Transform parent = null) where T : UnityEngine.Object
+    public static void LoadAssetAsync<T>(string path, Action<T> callback) where T : UnityEngine.Object
+    static IEnumerator DoLoadAssetAsync<T>(string path, Action<T> callback) where T : UnityEngine.Object
+    public static GameObject GetPrefab(string path)
+    public static GameObject InstantiatePrefab(string path, Transform parent = null)
+    public static GameObject InstantiatePrefab(GameObject prefab, Transform parent = null)
+}
+
+interface IEventInfo
+{
+    void Destroy()
+}
+
+IEventInfo <|.. EventInfoA
+class EventInfoA
+{
+    public Action action
+    public void Init(Action action)
+    public void Destroy()
+}
+
+IEventInfo <|.. EventInfoB
+class EventInfoB<T>
+{
+    public Action<T> action;
+    public void Init(Action<T> action)
+    public void Destroy()
+}
+
+IEventInfo <|.. EventInfoC
+class EventInfoC<T, K>
+{
+    public Action<T, K> action;
+    public void Init(Action<T, K> action)
+    public void Destroy()
+}
+
+IEventInfo <|.. EventInfoD
+class EventInfoD<T, K, L>
+{
+    public Action<T, K, L> action;
+    public void Init(Action<T, K, L> action)
+    public void Destroy()
+}
+
+EventInfoA *-- EventManager
+EventInfoB *-- EventManager
+EventInfoC *-- EventManager
+EventInfoD *-- EventManager
+JKEventListener *-- EventManager
+class EventManager
+{
+    private static readonly Dictionary<string, IEventInfo> eventInfoDic
+    public static void AddEventListener(string eventName, Action action)
+    public static void AddEventListener<T>(string eventName, Action<T> action)
+    public static void AddEventListener<T, K>(string eventName, Action<T, K> action)
+    public static void AddEventListener<T, K, L>(string eventName, Action<T, K, L> action)
+
+    public static void EventTrigger(string eventName)
+    public static void EventTrigger<T>(string eventName, T args)
+    public static void EventTrigger<T, K>(string eventName, T args1, K args2)
+    public static void EventTrigger<T, K, L>(string eventName, T args1, K args2, L args3)
+
+    public static void RemoveEventListener(string eventName, Action action)
+    public static void RemoveEventListener<T>(string eventName, Action<T> action)
+    public static void RemoveEventListener<T, K>(string eventName, Action<T, K> action)
+    public static void RemoveEventListener<T, K, L>(string eventName, Action<T, K, L> action)
+
+    public static void RemoveEventListener(string eventName)
+    public static void Clear()
+}
+
+enum FEventType
+{
+    OnPointerEnter
+    OnPointerClick
+    OnPointerExit
+    OnPointerDown
+    OnPointerUp
+    OnDrag
+    OnBeginDrag
+    OnEndDrag
+    OnCollisionEnter
+    OnCollisionStay
+    OnCollisionExit
+    OnCollisionEnter2D
+    OnCollisionStay2D
+    OnCollisionExit2D
+    OnTriggerEnter
+    OnTriggerStay
+    OnTriggerExit
+    OnTriggerEnter2D
+    OnTriggerStay2D
+    OnTriggerExit2D
+}
+interface IPointerEnterHandler
+interface IPointerClickHandler
+interface IPointerExitHandler
+interface IPointerDownHandler
+interface IPointerUpHandler
+interface IBeginDragHandler
+interface IEndDragHandler
+interface IDragHandler
+
+
+IPointerEnterHandler <|-- IMouseEvent
+IPointerClickHandler <|-- IMouseEvent
+IPointerExitHandler <|-- IMouseEvent
+IPointerDownHandler <|-- IMouseEvent
+IPointerUpHandler <|-- IMouseEvent
+IBeginDragHandler <|-- IMouseEvent
+IEndDragHandler <|-- IMouseEvent
+IDragHandler <|-- IMouseEvent 
+interface IMouseEvent
+
+class FEventListenerEventInfo<T>
+{
+    public Action<T, object[]> action
+    public object[] args
+    public void Init(Action<T, object[]> action, object[] args)
+    public void Destroy()
+    public void TriggerEvent(T eventData)
+}
+
+interface IFEventListenerEventInfos
+{
+    void RemoveAll()
+}
+
+IFEventListenerEventInfos <|.. FEventListenerEventInfos
+class FEventListenerEventInfos<T>
+{
+    private List<FEventListenerEventInfo<T>> eventList
+    public void AddListener(Action<T, object[]> action, params object[] args)
+    public void RemoveListener(Action<T, object[]> action, bool checkArgs = false, params object[] args)
+    public void RemoveAll()
+    public void TriggerEvent(T eventData)
+}
+
+Singleton <|.. FEventTypeEnumComparer
+IEqualityComparer <|.. FEventTypeEnumComparer
+class FEventTypeEnumComparer
+{
+    public bool Equals(FEventType x, FEventType y)
+    public int GetHashCode(FEventType obj)
+}
+
+MonoBehaviour <|-- JKEventListener
+IMouseEvent <|.. JKEventListener
+FEventType <-- JKEventListener
+FEventListenerEventInfo *-- JKEventListener
+FEventListenerEventInfos *-- JKEventListener
+FEventTypeEnumComparer *-- JKEventListener
+class JKEventListener
+{
+    private Dictionary<FEventType, IFEventListenerEventInfos> eventInfosDic
+    public void AddListener<T>(FEventType eventType, Action<T, object[]> action, params object[] args)
+    public void RemoveListener<T>(FEventType eventType, Action<T, object[]> action, bool checkArgs = false, params object[] args)
+    public void RemoveAllListener(FEventType eventType)
+    public void RemoveAllListener()
+    private void TriggerEvent<T>(FEventType eventType, T eventData)
+
+    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
+
+    private void OnCollisionEnter(Collision other)
+    private void OnCollisionStay(Collision other)
+    private void OnCollisionExit(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionStay2D(Collision2D other)
+    private void OnCollisionExit2D(Collision2D other)
+
+    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
+}
+
+ManagerBase <|.. AudioManager
+ResourcesManager <-- AudioManager
+class AudioManager
+{
+    private AudioSource bgAudioSource
+    private GameObject prefabAudioPlay
+    private List<AudioSource> audioSourceList
+    public override void Init()
+    private float globalVolume
+    public float GlobalVolume {}
+    private float bgVolume
+    public float BgVolume {}
+    private float effectVolume
+    public float EffectVolume {}
+    private bool isMute
+    public bool IsMute {}
+    private bool isLoop = true
+    public bool IsLoop {}
+    private bool isPause;
+    public bool IsPause {}
+    private void UpdateAllAudioVolume()
+    private void UpdateBgAudioVolume()
+    private void UpdateEffectAudioVolume()
+    private void SetEffectAudioPlay(AudioSource source, float spatial = -1)
+    private void UpdateAudioMute()
+    private void UpdateAudioLoop()
+
+    public void PlayBgAudio(AudioClip clip, bool loop = true, float volume = -1)
+    public void PlayBgAudio(string clipPath, bool loop = true, float volume = -1)
+
+    private Transform audioPlayRoot
+    private AudioSource GetAudioPlay(bool is3d = true)
+    private void RecycleAudioPlay(AudioSource source, AudioClip clip, UnityAction callback, float time) => StartCoroutine(DoRecycleAudioPlay(source, clip, callback, time))
+    private IEnumerator DoRecycleAudioPlay(AudioSource source, AudioClip clip, UnityAction callback, float time)
+    public void PlayOnShot(AudioClip clip, Component component, float volumeScale = 1.0f, bool is3d = true, UnityAction callback = null, float time = 0)
+    public void PlayOnShot(AudioClip clip, Vector3 position, float volumeScale = 1.0f, bool is3d = true, UnityAction callback = null, float time = 0)
+    public void PlayOnShot(string clipPath, Component component, float volumeScale = 1.0f, bool is3d = true, UnityAction callback = null, float time = 0)
+    public void PlayOnShot(string clipPath, Vector3 position, float volumeScale = 1.0f, bool is3d = true, UnityAction callback = null, float time = 0)
+}
+
+
+class SaveItem
+{
+    public int saveId { get; private set; }
+    public DateTime lastSaveTime { get; private set; }
+    public SaveItem(int saveId, DateTime lastSaveTime)
+    public void UpdateTime(DateTime lastSaveTime)
+}
+
+SaveItem *-- SaveManagerData
+class SaveManagerData
+{
+    public int currentId;
+    public List<SaveItem> saveItemList
+}
+
+interface IComparer<in T>
+{
+    int Compare(T x, T y);
+}
+IComparer <|.. OrderByUpdateTimeComparer
+class OrderByUpdateTimeComparer
+{
+    public int Compare(SaveItem x, SaveItem y)
+}
+
+OrderByUpdateTimeComparer *-- SaveManager
+SaveManagerData *-- SaveManager
+class SaveManager
+{
+    private static SaveManagerData saveManagerData
+    private const string saveDirName = "SaveData"
+    private const string settingDirName = "Setting"
+    private static readonly string saveDirPath
+    private static readonly string settingDirPath
+    private static Dictionary<int, Dictionary<string, object>> cacheDic
+    private static BinaryFormatter binaryFormatter
+    
+    static SaveManager()
+    
+    private static void InitSaveManagerData()
+    public static void UpdateSaveManagerData()
+    public static List<SaveItem> GetAllSaveItem()
+    public static List<SaveItem> GetAllSaveItemByCreateTime()
+    public static List<SaveItem> GetAllSaveItemByUpdateTime()
+    public static List<SaveItem> GetAllSaveItem<T>(Func<SaveItem, T> orderFunc, bool isDescending = false)
+
+    public static SaveItem GetSaveItem(int id)
+    public static SaveItem CreateSaveItem()
+    public static void DeleteSaveItem(int saveId)
+    public static void DeleteSaveItem(SaveItem saveItem)
+    private static void SetCache(int saveId, string saveFileName, object saveObject)
+    private static T GetCache<T>(int saveId, string saveFileName) where T : class
+    private static void RemoveCache(int saveId) { cacheDic.Remove(saveId); }
+
+    public static void SaveObject(object saveObject, string saveFileName, int saveId = 0)
+    public static void SaveObject(object saveObject, string saveFileName, SaveItem saveItem)
+    public static void SaveObject(object saveObject, int saveId = 0)
+    public static void SaveObject(object saveObject, SaveItem saveItem)
+    public static T LoadObject<T>(string saveFileName, int saveId = 0) where T : class
+    public static T LoadObject<T>(string saveFileName, SaveItem saveItem) where T : class
+    public static T LoadObject<T>(int saveId = 0) where T : class
+    public static T LoadObject<T>(SaveItem saveItem) where T : class
+
+    public static T LoadSetting<T>(string fileName) where T : class
+    public static T LoadSetting<T>() where T : class
+    public static void SaveSetting(object saveObject, string fileName)
+    public static void SaveSetting(object saveObject)
+
+    private static string GetSavePath(int saveId, bool isNeedCreateDir = true)
+    private static void SaveFile(object saveObj, string path)
+    private static T LoadFile<T>(string path) where T : class
+}
+
+
+enum LanguageType
+{
+    Chinese = 0
+    English = 1
+}
+
+interface ILanguageContent
+
+ILanguageContent <|.. L_Text
+class L_Text
+{
+    public string content
+}
+
+ILanguageContent <|.. L_Image
+class L_Image
+{
+    public Sprite content
+}
+
+ILanguageContent <|.. L_Video
+class L_Video
+{
+    public VideoClip content
+}
+
+ILanguageContent <|.. L_Audio
+class L_Audio
+{
+    public AudioClip content
+}
+
+LanguageType <-- LocalizationModel
+L_Text *-- LocalizationModel
+L_Image *-- LocalizationModel
+L_Video *-- LocalizationModel
+L_Audio *-- LocalizationModel
+class LocalizationModel
+{
+    public Dictionary<LanguageType, ILanguageContent> contentDic
+}
+
+ConfigBase <|-- LocalizationSetting
+LocalizationModel *-- LocalizationSetting
+class LocalizationSetting
+{
+    private Dictionary<string, Dictionary<string, LocalizationModel>> dataPackage
+    public T GetContent<T>(string dataPackageName, string contentName, LanguageType languageType) where T : class, ILanguageContent
+}
+
+ManagerBase <|.. LocalizationManager
+LocalizationSetting o-- LocalizationManager
+LanguageType o-- LocalizationManager
+class LocalizationManager
+{
+public LocalizationSetting localizationSetting
+private LanguageType currentLanguageType
+public LanguageType CurrentLanguageType {}
+public T GetContent<T>(string dataPackageName, string contentName) where T : class, ILanguageContent
+private void UpdateLanguageType()
+}
+
+
+ManagerBase <|.. MonoManager
+class MonoManager
+{
+    private static Action updateEvent
+    private static Action lateUpdateEvent
+    private static Action fixedUpdateEvent
+    public void AddUpdateListener(Action action)
+    public void RemoveUpdateListener(Action action)
+    public void AddLateUpdateListener(Action action)
+    public void RemoveLateUpdateListener(Action action)
+    public void AddFixedUpdateListener(Action action)
+    public void RemoveFixedUpdateListener(Action action)
+    private void Update()
+    private void LateUpdate()
+    private void FixedUpdate()
+}
+
+MonoManager <-- SceneManager
+class SceneManager
+{
+    public static void LoadScene(string sceneName, Action callback = null)
+    public static void LoadSceneAsync(string sceneName, Action callback = null)
+    private static IEnumerator DoLoadSceneAsync(string sceneName, Action callback = null)
+}
+
+interface IStateMachineOwner
+
+IStateMachineOwner o-- StateMachine
+PoolAttribute <-- StateMachine
+JKFrameworkExtension <.. StateMachine
+PoolManager <-- StateMachine
+StateBase <-- StateMachine
+class StateMachine
+{
+    public int CurrentStateType { get; private set; }
+    private StateBase currentStateObj
+    private IStateMachineOwner owner
+    private Dictionary<int, StateBase> stateDic
+    public void Init(IStateMachineOwner owner)
+    public bool SwitchState<T>(int newStateType, bool reCurrentState = false) where T : StateBase, new()
+    private StateBase GetState<T>(int stateType) where T : StateBase, new()
+    public void Stop()
+    public void Destroy()
+}
+
+IStateMachineOwner o-- StateBase
+JKFrameworkExtension <.. StateBase
+PoolManager <-- StateBase
+StateMachine <-- StateBase
+abstract class StateBase
+{
+    protected StateMachine stateMachine
+    public virtual void Init(IStateMachineOwner owner, int stateType, StateMachine stateMachine)
+    public virtual void UnInit()
+    public virtual void Enter()
+    public virtual void Exit()
+    public virtual void Update()
+    public virtual void LateUpdate()
+    public virtual void FixedUpdate()
+}
+
+
+enum WindowResult
+{
+	None
+	Yes
+	No
+}
+
+MonoBehaviour <|-- UIWindowBase
+EventManager <-- UIWindowBase
+WindowResult *-- UIWindowBase
+class UIWindowBase
+{
+    public Type type
+    public virtual void Init()
+    public virtual void OnShow()
+    public void Close()
+    public virtual void OnClose()
+    public virtual void OnCloseClick()
+    public virtual void OnYesClick()
+    protected virtual void RegisterEventListener()
+    protected virtual void CancelEventListener()
+    protected virtual void OnUpdateLanguage()
+}
+
+UIWindowBase o-- UIElement
+class UIElement
+{
+    public bool isCache
+    public GameObject prefab
+    public int layerLevel
+    public UIWindowBase objInstance
+}
+
+Attribute <|.. UIElementAttribute
+class UIElementAttribute
+{
+    public bool isCache
+    public string resourcePath
+    public int layerLevel
+    public UIElementAttribute(bool isCache, string resourcePath, int layerLevel)
+}
+
+
+class UILayer
+{
+    public Transform root
+    public Image maskImage
+    private int count
+    public void OnShow()
+    public void OnClose()
+    private void Update()
+}
+
+ManagerBase <|.. UIManager
+UILayer *-- UIManager
+UIElement o-- UIManager
+UIElementAttribute o-- UIManager
+UITip o-- UIManager
+UIWindowBase <-- UIManager
+ResourcesManager <.. UIManager
+LocalizationManager <.. UIManager
+GameSetting <.. UIManager
+class UIManager
+{
+    public Dictionary<Type, UIElement> UIElementDic
+    private const string TipLocalizationPackageName = "Tip"
+    private UILayer[] UILayers
+    private UITips uiTips
+    public override void Init()
+    public void AddTip(string info)
+    public void AddTipByLocalization(string tipKeyName)
+    public T Show<T>(int layer = -1) where T : UIWindowBase
+    public UIWindowBase Show(Type type, int layer = -1)
+    public void Close<T>()
+    public void CloseAll()
+}
+
+UIWindowBase <|-- UILoadingWindow
+EventManager <.. UILoadingWindow
+class UILoadingWindow
+{
+    private Text progressText
+    private Image fillImage
+    public override void OnShow()
+    protected override void RegisterEventListener()
+    protected override void CancelEventListener()
+    private void OnLoadingSceneSucceeded()
+    private void UpdateProgress(float progressValue)
+}
+
+MonoBehaviour <|-- UITips
+class UITips
+{
+private Animator animator
+private Text infoText
+private Queue<string> tipsQueue
+private static readonly int CanTip
+private void Awake()
+public void AddTip(string info)
+public void ShowTip()
+private void EndTip()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class JKFrameworkExtension
+{
+    public static T GetAttribute<T>(this object obj) where T : Attribute
+    public static T GetAttribute<T>(this object obj, Type type) where T : Attribute
+    public static bool ArrayEquals(this object[] objects, object[] otherObjects)
+    
+    public static void JKGameObjectPushPool(this GameObject gameObject)
+    public static void JKGameObjectPushPool(this Component component)
+    public static void JKObjectPushPool(this object obj)
+
+    public static void JKLocalSet(this Text text, string dataPackageName, string contentName)
+    public static void JKLocalSet(this Image image, string dataPackageName, string contentName)
+    public static void JKLocalSet(this AudioSource audioSource, string dataPackageName, string contentName)
+    public static void JKLocalSet(this VideoPlayer videoPlayer, string dataPackageName, string contentName)
+
+    public static void OnUpdate(this object obj, Action action)
+    public static void RemoveUpdate(this object obj, Action action)
+    public static void OnLateUpdate(this object obj, Action action)
+    public static void RemoveLateUpdate(this object obj, Action action)
+    public static void OnFixedUpdate(this object obj, Action action)
+    public static void RemoveFixedUpdate(this object obj, Action action)
+    public static Coroutine StartCoroutine(this object obj, IEnumerator routine)
+    public static void StopCoroutine(this object obj, Coroutine routine)
+    public static void StopAllCoroutine(this object obj)
+}
+@enduml

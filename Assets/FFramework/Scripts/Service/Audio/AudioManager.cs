@@ -103,7 +103,7 @@ namespace JKFramework
         /// <summary>
         /// 更新背景音量
         /// </summary>
-        private void UpdateBgAudioVolume() { bgAudioSource.volume = GlobalVolume * BgVolume; }
+        private void UpdateBgAudioVolume() => bgAudioSource.volume = GlobalVolume * BgVolume;
         /// <summary>
         /// 更新音效音量
         /// </summary>
@@ -138,7 +138,7 @@ namespace JKFramework
         /// <summary>
         /// 更新背景音乐循环启用/禁用
         /// </summary>
-        private void UpdateAudioLoop() { bgAudioSource.loop = isLoop; }
+        private void UpdateAudioLoop() => bgAudioSource.loop = isLoop;
         #endregion
 
         #region 背景音乐
@@ -173,7 +173,7 @@ namespace JKFramework
         /// <summary>
         /// 回收播放器
         /// </summary>
-        private void RecycleAudioPlay(AudioSource source, AudioClip clip, UnityAction callback, float time) { StartCoroutine(DoRecycleAudioPlay(source, clip, callback, time)); }
+        private void RecycleAudioPlay(AudioSource source, AudioClip clip, UnityAction callback, float time) => StartCoroutine(DoRecycleAudioPlay(source, clip, callback, time));
         private IEnumerator DoRecycleAudioPlay(AudioSource source, AudioClip clip, UnityAction callback, float time)
         {
             //延迟AudioClip的长度（秒）

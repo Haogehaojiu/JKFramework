@@ -124,7 +124,7 @@ namespace JKFramework
             }
             if (clearCSharpObject) objectPoolDic.Clear();
         }
-        public void ClearAllGameObject() { Clear(true, false); }
+        public void ClearAllGameObject() => Clear(true, false);
         public void ClearGameObject(string prefabName)
         {
             var obj = poolRootObj.transform.Find(prefabName).gameObject;
@@ -134,8 +134,8 @@ namespace JKFramework
                 gameObjectPoolDictionary.Remove(prefabName);
             }
         }
-        public void ClearGameObject(GameObject prefab) { ClearGameObject(prefab.name); }
-        public void ClearAllObject() { Clear(false); }
+        public void ClearGameObject(GameObject prefab) => ClearGameObject(prefab.name);
+        public void ClearAllObject() => Clear(false);
         public void ClearObject<T>()
         {
             var fullName = typeof(T).FullName;

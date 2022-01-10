@@ -61,7 +61,7 @@ namespace JKFramework
                 args = null;
                 this.JKObjectPushPool();
             }
-            public void TriggerEvent(T eventData) { action?.Invoke(eventData, args); }
+            public void TriggerEvent(T eventData) => action?.Invoke(eventData, args);
         }
         private interface IFEventListenerEventInfos
         {
@@ -133,8 +133,8 @@ namespace JKFramework
         private class FEventTypeEnumComparer : Singleton<FEventTypeEnumComparer>, IEqualityComparer<FEventType>
         {
 
-            public bool Equals(FEventType x, FEventType y) { return x == y; }
-            public int GetHashCode(FEventType obj) { return (int)obj; }
+            public bool Equals(FEventType x, FEventType y) => x == y;
+            public int GetHashCode(FEventType obj) => (int)obj;
         }
         #endregion
 

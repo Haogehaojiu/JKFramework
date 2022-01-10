@@ -38,16 +38,16 @@ namespace JKFramework
         /// <summary>
         /// GameObject放入对象池
         /// </summary>
-        public static void JKGameObjectPushPool(this GameObject gameObject) { PoolManager.Instance.PushGameObject(gameObject); }
+        public static void JKGameObjectPushPool(this GameObject gameObject) => PoolManager.Instance.PushGameObject(gameObject);
         /// <summary>
         /// GameObject放入对象池
         /// </summary>
-        public static void JKGameObjectPushPool(this Component component) { JKGameObjectPushPool(component.gameObject); }
+        public static void JKGameObjectPushPool(this Component component) => JKGameObjectPushPool(component.gameObject);
         /// <summary>
         /// 普通类放入对象池
         /// </summary>
         /// <param name="obj"></param>
-        public static void JKObjectPushPool(this object obj) { PoolManager.Instance.PushObject(obj); }
+        public static void JKObjectPushPool(this object obj) => PoolManager.Instance.PushObject(obj);
         #endregion
         #region 本地化
         /// <summary>
@@ -91,19 +91,19 @@ namespace JKFramework
         /// <summary>
         /// 移除LateUpdate监听
         /// </summary>
-        public static void RemoveLateUpdate(this object obj, Action action) { MonoManager.Instance.RemoveLateUpdateListener(action); }
+        public static void RemoveLateUpdate(this object obj, Action action) => MonoManager.Instance.RemoveLateUpdateListener(action);
         /// <summary>
         /// 添加FixedUpdate监听
         /// </summary>
-        public static void OnFixedUpdate(this object obj, Action action) { MonoManager.Instance.AddFixedUpdateListener(action); }
+        public static void OnFixedUpdate(this object obj, Action action) => MonoManager.Instance.AddFixedUpdateListener(action);
         /// <summary>
         /// 移除FixedUpdate监听
         /// </summary>
-        public static void RemoveFixedUpdate(this object obj, Action action) { MonoManager.Instance.RemoveFixedUpdateListener(action); }
+        public static void RemoveFixedUpdate(this object obj, Action action) => MonoManager.Instance.RemoveFixedUpdateListener(action);
 
-        public static Coroutine StartCoroutine(this object obj, IEnumerator routine) { return MonoManager.Instance.StartCoroutine(routine); }
-        public static void StopCoroutine(this object obj, Coroutine routine) { MonoManager.Instance.StopCoroutine(routine); }
-        public static void StopAllCoroutine(this object obj) { MonoManager.Instance.StopAllCoroutines(); }
+        public static Coroutine StartCoroutine(this object obj, IEnumerator routine) => MonoManager.Instance.StartCoroutine(routine);
+        public static void StopCoroutine(this object obj, Coroutine routine) => MonoManager.Instance.StopCoroutine(routine);
+        public static void StopAllCoroutine(this object obj) => MonoManager.Instance.StopAllCoroutines();
         #endregion
     }
 }

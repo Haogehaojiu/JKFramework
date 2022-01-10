@@ -14,7 +14,7 @@ namespace JKFramework
         /// <param name="owner">宿主</param>
         /// <param name="stateType">状态类型枚举值</param>
         /// <param name="stateMachine">所属状态机</param>
-        public virtual void Init(IStateMachineOwner owner, int stateType, StateMachine stateMachine) { this.stateMachine = stateMachine; }
+        public virtual void Init(IStateMachineOwner owner, int stateType, StateMachine stateMachine) => this.stateMachine = stateMachine;
         /// <summary>
         /// 反初始化
         /// 不使用，放回对象池时执行
